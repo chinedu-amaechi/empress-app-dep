@@ -30,7 +30,7 @@ const ProductHero = () => {
     setIsVisible(true);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [heroImages]);
 
   return (
     <section className="relative min-h-[100vh] flex items-center overflow-hidden">

@@ -322,7 +322,7 @@ export default function ProductsPage() {
               {/* Search query tag */}
               {searchQuery && (
                 <div className="flex items-center bg-[#11296B]/10 text-[#11296B] rounded-full px-3 py-1 text-sm">
-                  <span>Search: "{searchQuery}"</span>
+                  <span>Search: &quot;{searchQuery}&quot;</span>
                   <button
                     onClick={() => updateSearchParams("q", "")}
                     className="ml-2 text-[#11296B] hover:text-[#1E96FC]"
@@ -438,8 +438,8 @@ export default function ProductsPage() {
               No products found
             </h2>
             <p className="text-gray-500 mb-6 max-w-md mx-auto">
-              We couldn't find any products matching your current filters. Try
-              adjusting your search criteria or browse our collections.
+              We couldn&apos;t find any products matching your current filters.
+              Try adjusting your search criteria or browse our collections.
             </p>
             <button
               className="inline-flex items-center px-6 py-3 
