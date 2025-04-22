@@ -312,7 +312,6 @@ function Collections() {
                         className={checkerboardStyles.cellContent}
                         style={{
                           backgroundImage: `url(${activeCollection.imageUrl.optimizeUrl})`,
-                          backgroundSize: `${gridSize * 100}%`,
                           backgroundPosition: `${-left * gridSize}% ${
                             -top * gridSize
                           }%`,
