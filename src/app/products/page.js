@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 
 // UI Components
@@ -13,7 +13,7 @@ import Heading from "@/components/ui/heading";
 import { getAllProducts } from "@/lib/product-service";
 import useCollections from "@/hooks/use-collections";
 
-export default function ProductsPage() {
+function ProductsPage() {
   const searchParams = useSearchParams();
   const collectionFilter = searchParams.get("collection") || "all";
   const searchQuery = searchParams.get("q") || "";
@@ -463,5 +463,13 @@ export default function ProductsPage() {
       </main>
       <Footer />
     </div>
+  );
+}
+
+export default function Page() {
+  return (
+    <Suspense fallback={<div>Loading reset form...</div>}>
+      <ProductsPage />
+    </Suspense>
   );
 }
