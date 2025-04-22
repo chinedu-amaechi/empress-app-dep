@@ -1,3 +1,3 @@
-const backendUrl = "https://empress-backend-dep.onrender.com";
+const backendUrl = "https://empress-backend.vercel.app";
 
 export default backendUrl;
