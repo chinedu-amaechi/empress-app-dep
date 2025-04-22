@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
@@ -30,7 +30,7 @@ const checkerboardStyles = {
   cellHidden: "scale-0 opacity-0",
 };
 
-export default function Collections() {
+function Collections() {
   const searchParams = useSearchParams();
   const highlightCollection = searchParams.get("collection");
   const [collections, setCollections] = useState([]);
@@ -554,5 +554,13 @@ export default function Collections() {
       </AnimatePresence>
       <Footer />
     </main>
+  );
+}
+
+export default function Page() {
+  return (
+    <Suspense fallback={<div>Loading reset form...</div>}>
+      <Collections />
+    </Suspense>
   );
 }
