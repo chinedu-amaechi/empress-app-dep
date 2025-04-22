@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import { useForm } from "react-hook-form";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
@@ -48,9 +48,9 @@ function ResetPassword() {
     };
   }, []);
 
-    const onSubmit = async (data) => {
-      console.log("Form data:", data); // Debugging line
-      
+  const onSubmit = async (data) => {
+    console.log("Form data:", data); // Debugging line
+
     if (data.password !== data.confirmPassword) {
       toast.error("Passwords do not match");
       return;
@@ -164,4 +164,10 @@ function ResetPassword() {
   );
 }
 
-export default ResetPassword;
+export default function Page() {
+  return (
+    <Suspense fallback={<div>Loading reset form...</div>}>
+      <ResetPassword />
+    </Suspense>
+  );
+}
