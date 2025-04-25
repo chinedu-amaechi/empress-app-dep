@@ -109,8 +109,8 @@ const Navbar = () => {
                 className="w-auto transition-all duration-300 h-12"
                 src="/icons/empress_logo.png"
                 alt="Empress Logo"
-                // width={48}
-                // height={48}
+                width={48}
+                height={48}
               />
             </Link>
           </div>
